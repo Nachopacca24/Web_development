@@ -6,6 +6,7 @@ keys.forEach(key => {
 key.style.left = Math.random() * (window.innerWidth - 100) + 'px';
 key.style.top = Math.random() * (window.innerHeight - 100) + 'px';
 
+
 });
 
 // Lista de soft skills

@@ -1,34 +1,45 @@
 /* Estilos generales */
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #000;  /* fondo suave gris-azulado */
+  background-color: #000;
   color: #2c3e50;
-  margin: 0;           /* eliminar margen por defecto */
-  padding: 0 10px;     /* padding horizontal controlado */
+  margin: 0;
+  padding: 0 10px;
   line-height: 1.6;
 }
 
 /* Encabezados */
+h1, h2, h3, h4, h5, h6 {
+  color: #ffcc00; /* amarillo */
+}
+
 h1 {
   text-align: center;
-  color: #e43f5a;   /* azul oscuro elegante */
-  background-color: #000; /* amarillo suave */
+  background-color: #000;
   padding: 15px;
   border-radius: 10px;
 }
 
 h2 {
   text-align: center;
-  color: #e43f5a;
   margin-top: 10px;
 }
 
 h3 {
-  color: #e43f5a;  /* rojo oscuro */
-  border-bottom: 2px solid #e43f5a;
+  color: #ffcc00;               /* encabezado amarillo */
+  border-bottom: 2px solid #ff0000; /* línea roja */
   padding-bottom: 5px;
   margin-top: 20px;
 }
+
+
+h4 {
+  color: rgba(200, 200, 200, 0.6); /* gris semitransparente */
+  font-weight: normal;              /* opcional, menos destacado */
+  text-align: center;               /* centrado */
+  margin-top: 5px;                  /* un poco de separación */
+}
+
 
 /* Imágenes */
 img {
@@ -36,7 +47,7 @@ img {
   margin: 20px auto;
   border-radius: 12px;
   box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
-  max-width: 100%; /* asegurar que no se salga de la pantalla */
+  max-width: 100%;
   height: auto;
 }
 
@@ -62,6 +73,8 @@ ul li {
   padding: 5px 0;
 }
 
+
+
 /* Tablas */
 table {
   width: 80%;
@@ -84,7 +97,7 @@ th, td {
 }
 
 th {
-  background-color: #1e3d59; /* azul oscuro */
+  background-color: #1e3d59;
   color: white;
 }
 
@@ -92,31 +105,23 @@ tr:nth-child(even) {
   background-color: #f9f9f9;
 }
 
-/* Flexbox aplicado en nav */
+/* Flexbox en nav */
 nav {
   display: flex;
-  justify-content: center; /* centra los enlaces */
-  gap: 20px; /* espacio entre enlaces */
+  justify-content: center;
+  gap: 20px;
   margin: 20px 0;
 }
 
-/* Grid aplicado en main */
+/* Grid en main */
 main {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* dos columnas iguales */
-  gap: 20px;
+  display: block;
 }
 
-/* 🎯 Mobile (por defecto) */
-main {
-  display: block; /* secciones en una sola columna */
-}
-
-/* 📱 Tablet */
 @media (min-width: 600px) and (max-width: 1024px) {
   main {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* dos columnas */
+    grid-template-columns: 1fr 1fr;
     gap: 15px;
   }
 
@@ -125,11 +130,10 @@ main {
   }
 }
 
-/* 🖥️ Desktop */
 @media (min-width: 1025px) {
   main {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* tres columnas */
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
 
@@ -140,23 +144,73 @@ main {
 
   body {
     max-width: 1200px;
-    margin: 0 auto; /* centrar contenido correctamente */
-    padding: 0 20px; /* padding horizontal controlado */
+    margin: 0 auto;
+    padding: 0 20px;
   }
 }
 
-
+/* Fuego pixelado */
 .fuego-pixelado {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 300px;                /* altura del fuego */
-      pointer-events: none;
-      z-index: -1;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  pointer-events: none;
+  z-index: -1;
+  background-image: url('imagenes/Fuego.gif');
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: bottom left;
+}
 
-      background-image: url('imagenes/Fuego.gif');
-      background-repeat: repeat-x;       /* repetir horizontalmente */
-      background-size: auto 100%;        /* mantiene proporción del GIF */
-      background-position: bottom left;  /* pegado abajo */
-    }
+/* Llaves */
+.key {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  cursor: grab;
+  background: transparent;
+  transition: transform 0.2s;
+}
+
+.key:active {
+  cursor: grabbing;
+  transform: scale(1.1);
+}
+
+img.key {
+  max-width: none;
+}
+
+/* Contenedor soft skills */
+#softskills-container {
+  position: relative;
+  min-height: 150px;
+  margin: 20px auto;
+  padding: 10px;
+  border: 2px dashed #ffcc00;
+  border-radius: 10px;
+  width: 80%;
+  background-color: rgba(255,255,255,0.05); /* fondo sutil */
+  color: white;
+  text-align: center;
+}
+
+/* Interruptor Doom */
+.doom-switch {
+  width: 80px;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.doom-switch:active {
+  transform: scale(1.1);
+}
+
+#tablaExperiencia {
+  display: none; /* ocultar por defecto */
+}
