@@ -40,7 +40,7 @@ h3 {
   border: 2px dashed #ffcc00;
   border-radius: 10px;
   width: 80%;
-  background-color: rgba(255,255,255,0.05);
+  background-color: #000;
   color: white;
   text-align: center;
 }
@@ -95,4 +95,19 @@ tr:nth-child(even) {
 }
 .fuego-pixelado {
   background-image: url('./imagenes/Fuego.gif'); /* ./ relativo a src/ */
+}
+
+/* Navbar más grande */
+.navbar {
+  padding: 20px 10px !important; /* más alto */
+  font-size: 1.3rem; /* texto más grande */
+}
+
+.navbar .nav-link {
+  padding: 12px 20px !important; /* más espacio entre links */
+}
+
+.navbar-brand {
+  font-size: 1.8rem; /* brand más grande */
+  font-weight: bold;
 }
