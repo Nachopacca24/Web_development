@@ -270,12 +270,12 @@ function App() {
           Experiencia Laboral
         </h3>
         <img
-          src="/imagenes/Doom_switch_off.png"
-          alt="Interruptor Doom"
-          className="doom-switch"
-          id="doomSwitch"
-          onClick={() => setIsOn(!isOn)}
-        />
+  src={isOn ? "/imagenes/Doom_switch_on.png" : "/imagenes/Doom_switch_off.png"}
+  alt="Interruptor Doom"
+  className="doom-switch"
+  onClick={() => setIsOn(!isOn)}
+/>
+
         <h4>Presiona el botón de arriba</h4>
 
         <table
