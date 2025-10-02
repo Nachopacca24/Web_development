@@ -4,7 +4,7 @@ import "../style.css";
 function Bio() {
   return (
     <div className="my-4">
-      <h3>Biografía</h3>
+      <h3>Un poco sobre mí</h3>
       <p>
   Soy José Ignacio Paccagnella, estudiante de Ingeniería en Computer Science 
   en la Universidad Francisco Marroquín. Me apasiona la tecnología, el 

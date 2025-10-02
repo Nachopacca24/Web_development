@@ -40,9 +40,14 @@ h3 {
   border: 2px dashed #ffcc00;
   border-radius: 10px;
   width: 80%;
-  background-color: rgba(255,255,255,0.05);
+  background-color: #000;
   color: white;
   text-align: center;
+}
+
+/* Separación entre badges de soft skills */
+#softskills-container .badge {
+  margin: 0.3rem 0.5rem; /* arriba/abajo 0.3rem, izquierda/derecha 0.5rem */
 }
 
 /* Doom switch */

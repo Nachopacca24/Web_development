@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "../style.css";
+import DataService from "../services/DataService";
 
 function Skills() {
   useEffect(() => {
@@ -11,25 +12,12 @@ function Skills() {
       key.style.top = Math.random() * (window.innerHeight - 100) + "px";
     });
 
-    const softSkills = [
-      "Trabajo en equipo",
-      "Resolución de problemas",
-      "Adaptabilidad",
-      "Pensamiento crítico",
-      "Creatividad",
-      "Empatía",
-      "Liderazgo",
-      "Organización",
-      "Negociación",
-      "Toma de decisiones",
-    ];
-
     function showSoftSkills() {
       dropArea.style.border = "none";
       dropArea.style.backgroundColor = "transparent";
       dropArea.innerHTML = "";
 
-      softSkills.forEach((skill) => {
+      DataService.skills.forEach((skill) => {
         const span = document.createElement("span");
         span.className = "badge bg-secondary me-1";
         span.textContent = skill;
@@ -101,8 +89,8 @@ function Skills() {
       <h3>Soft Skills</h3>
       <div id="softskills-container" className="softskills-container mb-3">
         <p className="text-white">
-          Arrastra las llaves de cráneo de colores aquí para desbloquear soft
-          skills
+          Arrastra las llaves de cráneo de colores aquí para desbloquear tus
+          soft skills
         </p>
       </div>
 
