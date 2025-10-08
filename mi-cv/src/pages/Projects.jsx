@@ -30,7 +30,7 @@ function Projects() {
   return (
     <div className="mt-5">
       <h3 className="mb-4 text-center text-warning fw-bold">
-        💻 Mis Proyectos Favoritos
+        Mis Proyectos Favoritos
       </h3>
 
       {repos.length > 0 ? (
