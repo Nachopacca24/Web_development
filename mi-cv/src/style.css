@@ -101,3 +101,7 @@ tr:nth-child(even) {
 .fuego-pixelado {
   background-image: url('./imagenes/Fuego.gif'); /* ./ relativo a src/ */
 }
+
+.carousel-item {
+  transition: transform 1s ease-in-out;
+}

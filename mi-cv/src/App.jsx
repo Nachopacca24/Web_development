@@ -5,6 +5,7 @@ import Skills from "./pages/Skills";
 import Experience from "./pages/Experience";
 import Bio from "./pages/Bio";
 import { uppercase, formatoFecha } from "./pipes"; // 👈 Importamos los "pipes"
+import Projects from "./pages/Projects";
 
 function App() {
   const nombre = "Jose Ignacio Paccagnella";
@@ -112,6 +113,7 @@ function App() {
 
         {/* Experiencia */}
         <Experience />
+         <Projects />
 
         {/* Botón PDF */}
         <div className="text-center my-4">
@@ -133,6 +135,8 @@ function App() {
 
       {/* Fuego */}
       <div className="fuego-pixelado"></div>
+
+     
     </div>
   );
 }
