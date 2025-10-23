@@ -3,23 +3,21 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./style.css";
 import Skills from "./pages/Skills";
 import Experience from "./pages/Experience";
-import Bio from "./pages/Bio";   // 👈 Importamos la biografía
+import Bio from "./pages/Bio";
+import { uppercase, formatoFecha } from "./pipes"; // 👈 Importamos los "pipes"
+import Projects from "./pages/Projects";
 
 function App() {
+  const nombre = "Jose Ignacio Paccagnella";
+  const hoy = new Date();
+
   return (
     <div>
       {/* Navbar */}
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark border-bottom py-1 sticky-top">
         <div className="container">
-          <a className="navbar-brand fw-bold fs-6" href="#">
-            Inicio
-          </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-          >
+          <a className="navbar-brand fw-bold fs-6" href="#">Inicio</a>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
@@ -41,7 +39,7 @@ function App() {
       {/* Contenido principal */}
       <div className="container py-5">
         <h1 className="mb-3">Bienvenidos a mi CV</h1>
-        <h2 className="mb-4">Mi nombre es Jose Ignacio Paccagnella</h2>
+        <h2 className="mb-4">Mi nombre es {uppercase(nombre)}</h2> {/* 👈 Pipe aplicado */}
 
         {/* Foto */}
         <div className="text-center mb-4">
@@ -54,35 +52,18 @@ function App() {
         </div>
 
         {/* Contacto */}
-        <p>
-          <strong>Correo electrónico:</strong>{" "}
-          <a href="mailto:nachopaccagnella@gmail.com" className="text-warning">
-            nachopaccagnella@gmail.com
-          </a>
+        <p><strong>Correo electrónico:</strong>{" "}
+          <a href="mailto:nachopaccagnella@gmail.com" className="text-warning">nachopaccagnella@gmail.com</a>
         </p>
-        <p>
-          <strong>LinkedIn:</strong>{" "}
-          <a
-            href="https://www.linkedin.com/in/nacho-pacca-0bb280302/"
-            target="_blank"
-            className="text-info"
-          >
-            Mi perfil en LinkedIn
-          </a>
+        <p><strong>LinkedIn:</strong>{" "}
+          <a href="https://www.linkedin.com/in/nacho-pacca-0bb280302/" target="_blank" className="text-info">Mi perfil en LinkedIn</a>
         </p>
-        <p>
-          <strong>GitHub:</strong>{" "}
-          <a
-            href="https://github.com/Nachopacca24/Web_development"
-            target="_blank"
-            className="text-danger"
-          >
-            Repositorio: Web_development
-          </a>
+        <p><strong>GitHub:</strong>{" "}
+          <a href="https://github.com/Nachopacca24/Web_development" target="_blank" className="text-danger">Repositorio: Web_development</a>
         </p>
 
         {/* Biografía */}
-        <Bio />  {/* 👈 Aquí agregamos la nueva sección */}
+        <Bio />
 
         {/* Lenguajes */}
         <h3 className="mt-4">Lenguajes de programación usados</h3>
@@ -106,33 +87,33 @@ function App() {
           <span className="badge bg-dark me-1">CSV</span>
         </div>
 
-       {/* Educación */}
-<h3 id="educacion" className="mt-4 section-anchor">Educación</h3>
-<table className="table table-dark table-striped">
-  <thead>
-    <tr>
-      <th>Año</th>
-      <th>Institución</th>
-      <th>Descripción</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>2024 - Presente</td>
-      <td>Universidad Francisco Marroquín</td>
-      <td>Estudiante de Ingeniería en Computer Science</td>
-    </tr>
-    <tr>
-      <td>2011- 2023</td>
-      <td>Colegio Internacinonal Montessori</td>
-      <td>Bachillerato en Ciencias y Letras</td>
-    </tr>
-   
-  </tbody>
-</table>
+        {/* Educación */}
+        <h3 id="educacion" className="mt-4 section-anchor">Educación</h3>
+        <table className="table table-dark table-striped">
+          <thead>
+            <tr>
+              <th>Año</th>
+              <th>Institución</th>
+              <th>Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2024 - Presente</td>
+              <td>Universidad Francisco Marroquín</td>
+              <td>Estudiante de Ingeniería en Computer Science</td>
+            </tr>
+            <tr>
+              <td>2011 - 2023</td>
+              <td>Colegio Internacional Montessori</td>
+              <td>Bachillerato en Ciencias y Letras</td>
+            </tr>
+          </tbody>
+        </table>
 
         {/* Experiencia */}
         <Experience />
+         <Projects />
 
         {/* Botón PDF */}
         <div className="text-center my-4">
@@ -147,10 +128,15 @@ function App() {
             className="img-fluid rounded shadow-sm"
           />
         </div>
+
+        {/* Fecha con pipe */}
+        <p className="text-muted mt-3">Hoy es: {formatoFecha(new Date())}</p> {/* 👈 Pipe aplicado */}
       </div>
 
       {/* Fuego */}
       <div className="fuego-pixelado"></div>
+
+     
     </div>
   );
 }
